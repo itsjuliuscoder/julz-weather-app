@@ -9,7 +9,7 @@
 }
 
 .weather img {
-    display: none;
+    /* display: none; */
     margin-top: -9rem;
 }
 
@@ -49,6 +49,11 @@
     letter-spacing: 0.1rem;
 }
 
+.loader {
+    width: 5rem;
+    margin-top: 10rem;
+}
+
 .search-bar {
     position: relative;
 }
@@ -83,6 +88,13 @@
     font-size: 1.5rem;
     color: #2f2e57;
     cursor: pointer;
+}
+
+.not-found {
+    font-size: 3rem;
+    color: #484569;
+    margin-top: 5rem;
+    text-shadow: -.3rem 0.5rem 1rem rgba(0, 0, 0, 0.2);
 }
 
 .weather-type {
