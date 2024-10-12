@@ -5,6 +5,7 @@ import rainy from '../assets/images/rainy.png';
 import { useState, useEffect } from "react";
 import "./WeatherApp.css";
 import loadingGif from '../assets/images/loading.gif';
+import moment from "moment";
 
 
 const WeatherApp = () => {
@@ -79,19 +80,7 @@ const WeatherApp = () => {
 
     const backgroundImage = data.weather ? backgroundImages[data.weather[0].main] : 'linear-gradient(to right, #f3b07c, #fcd283)'; 
 
-    const currentDate = new Date();
-
-    const daysOfWeek = [ "Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat" ]
-
-    const months = [ "Jan", "Feb", "Mar", "Apr", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec" ]
-
-    const dayOfWeek = daysOfWeek[currentDate.getDay()]
-
-    const month = months[currentDate.getMonth()]
-
-    const dayofMonth = currentDate.getDate()
-
-    const formattedDate = `${dayOfWeek}, ${dayofMonth} ${month}`;
+    const currentDateTime = moment().format('ddd, DD MMM');
 
 
     return (
@@ -121,7 +110,7 @@ const WeatherApp = () => {
                             <div className="temp">{data.main ? `${Math.floor(data.main.temp)}°` : null}</div>
                         </div>
                         <div className="weather-date">
-                            <p>{formattedDate}</p>
+                            <p>{currentDateTime}</p>
                         </div>
                         <div className="weather-data">
                             <div className="humidity">
